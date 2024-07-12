@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Библиотека</title>
+</head>
+<body>
+    <table>
+    <h1>Выдачи</h1>
+        <tr>
+            <th >ID</th>
+            <th>Book ID</th>
+            <th>Book name</th>
+            <th>Reader ID</th>
+            <th>Reader name</th>
+            <th>Issue time</th>
+            <th>Return time</th>
+
+        </tr>
+        <tr th:each="issue: ${issues}">
+            <td th:text="${issue.getId()}"></td>
+            <td th:text="${issue.getBookId}"></td>
+            <td th:text="${issue.getBookName}"></td>
+            <td th:text="${issue.getReaderId}"></td>
+            <td th:text="${issue.getReaderName}"></td>
+            <td th:text="${issue.getIssueTimestamp}"></td>
+            <td th:text="${issue.getReturnTimestamp}"></td>
+        </tr>
+    </table>
+</body>
+</html>
